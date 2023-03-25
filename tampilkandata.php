@@ -12,6 +12,21 @@
 </head>
 <body>
     <h1>Data Identitas</h1>
+    <a href="forminput.php">Tambah Data</a>
+    <br>
+    <?php 
+        // @$notif = $_GET['notification'] == "hapus" ? "<span>Record deleted successfully</span>" : "<span>Record updated  successfully</span>";
+        $notif;
+        @$notification = $_GET['notification'];
+        if($notification == "hapus") {
+            $notif = "<span>Record deleted successfully</span>";
+        } else if($notification == "edit") {
+            $notif = "<span>Record updated  successfully</span>";
+        } else {
+            $notif = "";
+        }
+        echo $notif;
+    ?>
     <table>
         <tr>
             <th>Id</th>
@@ -33,9 +48,17 @@
             <!-- <td><?= $hasil['Nama']; ?></td> -->
             <!-- <td><?= $hasil['Jurusan']; ?></td> -->
             <!-- <td><?= $hasil['Jns_Kel']; ?></td> -->
-            <td><a href="edit_data.php?id=<?= $hasil[0] ?>">edit</a>&nbsp|&nbsp<a href="hapus_data.php?id=<?= $hasil[0] ?>">hapus</a></td>
+            <td><a href="edit_data.php?id=<?= $hasil[0] ?>">edit</a>&nbsp|&nbsp<a onclick="return hapus(<?= $hasil[0] ?>)">hapus</a></td>
         </tr>
         <?php endwhile; ?>
     </table>
+
+    <script>
+        function hapus(id) {
+            if (confirm('Yakin mau hapus?')) {
+                window.location = "hapus_data.php?id=" + id;
+            }
+        }
+    </script>
 </body>
 </html>
