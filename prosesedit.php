@@ -1,7 +1,7 @@
 <?php
     include "koneksi.php";
 
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['submit']) && $_POST['namasiswa'] && $_POST['jurusan'] && $_POST['jns_kel']) {
         $id = $_POST['id'];
         $nama = $_POST['namasiswa'];
         $jurusan = $_POST['jurusan'];

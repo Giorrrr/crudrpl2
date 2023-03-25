@@ -22,7 +22,9 @@
             $notif = "<span>Record deleted successfully</span>";
         } else if($notification == "edit") {
             $notif = "<span>Record updated  successfully</span>";
-        } else {
+        } else if($notification == "insert") {
+            $notif = "<span>Record insert  successfully</span>";
+        } else  {
             $notif = "";
         }
         echo $notif;
