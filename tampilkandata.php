@@ -33,7 +33,7 @@
             <!-- <td><?= $hasil['Nama']; ?></td> -->
             <!-- <td><?= $hasil['Jurusan']; ?></td> -->
             <!-- <td><?= $hasil['Jns_Kel']; ?></td> -->
-            <td><a href="">edit</a>&nbsp|&nbsp<a href="">hapus</a></td>
+            <td><a href="edit_data.php?id=<?= $hasil[0] ?>">edit</a>&nbsp|&nbsp<a href="hapus_data.php?id=<?= $hasil[0] ?>">hapus</a></td>
         </tr>
         <?php endwhile; ?>
     </table>

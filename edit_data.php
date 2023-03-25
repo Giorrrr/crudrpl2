@@ -16,14 +16,14 @@
 </head>
 <body>
     <h1>Edit</h1>
-    <form action="" method="POST">
+    <form action="prosesedit.php" method="POST">
         <table>
             <tr>
                 <td>Nama Siswa</td>
                 <td>:</td>
                 <input type="hidden" name="id" id="id" value="<?=  $hasil[0] ?>">
                 <td>
-                    <input type="text" name="nama" id="nama" value="<?= $hasil[1] ?>">
+                    <input type="text" name="namasiswa" id="namasiswa" value="<?= $hasil[1] ?>">
                 </td>
             </tr>
             <tr>
