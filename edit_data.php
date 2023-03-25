@@ -19,7 +19,7 @@
     <div class="wrapper">
         <div class="table-box">
             <br>
-            <a onclick="backpage()" class="back">Back</a>
+            <a onclick="backpage()" class="back"><i class="bi bi-arrow-left"></i>&nbspBack</a>
             <h1>Edit</h1>
             <form action="prosesedit.php" method="POST">
                 <table>

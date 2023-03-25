@@ -11,7 +11,7 @@
     <div class="wrapper">
         <div class="table-box">
             <br>
-            <a onclick="backpage()" class="back">Back</a>
+            <a onclick="backpage()" class="back"><i class="bi bi-arrow-left"></i>&nbspBack</a>
             <h1>Input Data</h1>
             <form action="prosesinput.php" method="post">
                 <table>
