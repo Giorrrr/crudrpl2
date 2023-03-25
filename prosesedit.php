@@ -13,5 +13,5 @@
             header('Location: tampilkandata.php?notification=edit');
         }
     } else {
-        header('Location: edit_data.php');
+        header('Location: tampilkandata.php');
     }

@@ -14,5 +14,5 @@
             header('Location: tampilkandata.php?notification=insert');
         }
     } else {
-        header('Location: forminput.php');
+        header('Location: tampilkandata.php');
     }
