@@ -1,1 +1,2 @@
 DirectoryIndex tampilkandata.php
+ErrorDocument 404 /crudrpl2/404.php

@@ -2,6 +2,17 @@
     include "koneksi.php";
 
     $id = $_GET['id'];
+
+    if (!$id) {
+        header('Location: tampilkandata.php');
+    }
+
+    $query = mysqli_query($con, "SELECT id FROM identitas WHERE id = '$id'");
+
+    if(!mysqli_fetch_array($query)) {
+        header('Location: tampilkandata.php?notification=error');
+    }
+
     $tampil = mysqli_query($con, "SELECT * FROM identitas WHERE id = '$id'");
     $hasil = mysqli_fetch_array($tampil);
 ?>
@@ -20,7 +31,7 @@
         <div class="table-box">
             <br>
             <a onclick="backpage()" class="back"><i class="bi bi-arrow-left"></i>&nbspBack</a>
-            <h1>Edit</h1>
+            <h1>Edit Data</h1>
             <form action="prosesedit.php" method="POST">
                 <table>
                     <tr>

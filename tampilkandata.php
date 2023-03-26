@@ -26,7 +26,9 @@
                     echo "<span class='notif'>Record updated  successfull</span>";
                 } else if($notification == "insert") {
                     echo "<span class='notif'>Record insert  successfull</span>";
-                } 
+                } else if($notification == "error") {
+                    echo "<span class='notif error'>Your ID not found!</span>";
+                }
             ?>
             <table>
                 <tr>
