@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jquery.dataTables.css">
     <link rel="stylesheet" href="style.css">
     <title>Tampil Data</title>
 </head>
@@ -30,40 +31,52 @@
                     echo "<span class='notif error'>Your ID not found!</span>";
                 }
             ?>
-            <table>
-                <tr>
-                    <th>Id</th>
-                    <th>Nama</th>
-                    <th>Jurusan</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Aksi</th>
-                </tr>
-                <?php
-                    $tampil = mysqli_query($con, "SELECT * FROM identitas");
-                    $id = 1;
-                    while ($hasil = mysqli_fetch_array($tampil)) :
-                ?>
-                <tr>
-                    <td><?= $id++; ?></td>
-                    <td><?= $hasil[1]; ?></td>
-                    <td><?= $hasil[2]; ?></td>
-                    <td><?= $hasil[3]; ?></td>
-                    <!-- <td><?= $hasil['Nama']; ?></td> -->
-                    <!-- <td><?= $hasil['Jurusan']; ?></td> -->
-                    <!-- <td><?= $hasil['Jns_Kel']; ?></td> -->
-                    <td><a href="edit_data.php?id=<?= $hasil[0] ?>" class="edit"><i class="bi bi-pencil-square"></i></a>&nbsp|&nbsp<a onclick="return hapus(<?= $hasil[0] ?>)" class="hapus"><i class="bi bi-trash-fill"></i></a></td>
-                </tr>
-                <?php endwhile; ?>
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nama</th>
+                        <th>Jurusan</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $tampil = mysqli_query($con, "SELECT * FROM identitas");
+                        $id = 1;
+                        while ($hasil = mysqli_fetch_array($tampil)) :
+                    ?>
+                    <tr>
+                        <td><?= $id++; ?></td>
+                        <td><?= $hasil[1]; ?></td>
+                        <td><?= $hasil[2]; ?></td>
+                        <td><?= $hasil[3]; ?></td>
+                        <!-- <td><?= $hasil['Nama']; ?></td> -->
+                        <!-- <td><?= $hasil['Jurusan']; ?></td> -->
+                        <!-- <td><?= $hasil['Jns_Kel']; ?></td> -->
+                        <td><a href="edit_data.php?id=<?= $hasil[0] ?>" class="edit"><i class="bi bi-pencil-square"></i></a>&nbsp|&nbsp<a onclick="return hapus(<?= $hasil[0] ?>)" class="hapus"><i class="bi bi-trash-fill"></i></a></td>
+                    </tr>
+                    <?php endwhile; ?>
+                </tbody>
             </table>
         </div>
     </div>
 
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="jquery.dataTables.js"></script>
     <script>
         function hapus(id) {
             if (confirm('Yakin mau hapus?')) {
                 window.location = "hapus_data.php?id=" + id;
             }
         }
+
+        $('#myTable').DataTable( {
+            paging: true,
+            pageLength : 5
+            // scrollY: 400
+        } );
     </script>
 </body>
 </html>
