@@ -62,6 +62,9 @@
             </table>
         </div>
     </div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
 
     <script src="jquery-3.6.4.min.js"></script>
     <script src="jquery.dataTables.js"></script>
